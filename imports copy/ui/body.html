@@ -1,0 +1,88 @@
+<head>
+  <!-- CSS only -->
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+</head>
+<body>
+  <div class="logo">
+    <div class="animate title">
+      <span>E</span><span>x</span> <span>A</span><span>n</span><span>i</span
+      ><span>m</span><span>u</span><span>s</span>
+      <br />
+    </div>
+    <div class="subtitle">
+      <span>Brings</span> <span>the</span> <span>best</span> <span>care</span> <span>to</span>
+      <span>you</span>
+    </div>
+  </div>
+  <nav class="red">
+    <div class="container">
+      <!--<a href="#" class="brand-logo">Online Physical Examination</a>-->
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="nav-item">
+              {{> loginButtons}}
+          </li>
+        </ul>
+    </div>
+    {{retId}}
+  </nav>
+  {{#if retIfLoggedIn}} <!---If the user has not logged in yet, display the login screen-->
+  <div class="container">
+    </div>
+      <div class="container">
+        <header>
+          <h1>Doctor Dashboard</h1>
+            <div class="topnav">
+              {{#if retForm}}
+                  <button class = "active" type="button" id="Dashboard">Dashboard</button>
+                  <button class = "inactive" type="button" id="Form">Add new patient</button>
+              {{else}}
+                  <button class = "inactive" type="button" id="Dashboard">Dashboard</button>
+                  <button class = "active" type="button" id="Form">Add new patient</button>
+              {{/if}}
+            </div>
+        </header>
+        {{#if retForm}}
+          {{> side}}
+        {{else}}
+          {{> form}}
+        {{/if}}
+      </div>
+    {{/if}}
+  </body>
+
+
+<template name="side">
+    <div class="sidebar">
+      {{#if returnSession "Welcome"}}
+        <button class = "active" type="button" id="Welcome">Welcome</button>
+      {{else}}
+        <button class = "inactive" type="button" id="Welcome">Welcome</button>
+      {{/if}}
+      {{#each patients}}
+        {{#if returnSession this.name}}
+          <button class = "active" type="button" id="{{name}}">{{name}}</button>
+          <div class="dates">
+              <button class="dropbtn">Dates</button>
+              {{#if retDrop}}
+              <div class="dropdown-content">
+                {{#each returnDates}}
+                  
+                  <button id="{{this}}" class="datebtn">{{this}}</button>
+                  {{#if myDate this}} <!-- if my session == this date-->
+                  <h1> THIS IS BEING DISPLAYED</h1>
+                  <div class="files">
+                    {{#each returnFiles}}
+                      <a href="https://www.w3schools.com">{{this}}</a>
+                    {{/each}}
+                  </div> 
+                  {{/if}}
+                {{/each}} <!---End of return Dates-->
+              </div>
+              {{/if}}
+        </div>
+        {{else}}
+          <button class = "inactive" type="button" id="{{name}}">{{name}}</button>
+        {{/if}}
+      {{/each}}
+    </div>
+</template>

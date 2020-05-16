@@ -1,0 +1,263 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+  background-image: url("blue.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+.sidebar button {
+  display: block;
+  color: black;
+  padding: 16px;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sidebar button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.sidebar button:hover:not(.active) {
+  color: gray;
+}
+.topnav {
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+.topnav button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.topnav button:hover {
+  color: gray;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dates {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content button:click {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dates:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+
+/*Animation Stuff:*/
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i");
+@import url("https://use.typekit.net/mls2kxv.css");
+
+.logo{
+  font-family: "myriad-pro", sans-serif;
+  font-style: normal;
+  text-align: center;
+  word-wrap: break-word;
+  width: 100%;
+  margin-top: -10vh;
+  font-weight: 900;
+  /*text-transform: uppercase;*/
+  /*padding: 0 0 200px;*/
+}
+
+.animate {
+  font-size: 50px;
+  margin: 100px 0 0;
+}
+
+.animate span {
+  display: inline-block;
+}
+
+.animate span:nth-of-type(2) {
+  animation-delay: 0.05s;
+}
+.animate span:nth-of-type(3) {
+  animation-delay: 0.1s;
+}
+.animate span:nth-of-type(4) {
+  animation-delay: 0.15s;
+}
+.animate span:nth-of-type(5) {
+  animation-delay: 0.2s;
+}
+.animate span:nth-of-type(6) {
+  animation-delay: 0.25s;
+}
+.animate span:nth-of-type(7) {
+  animation-delay: 0.3s;
+}
+.animate span:nth-of-type(8) {
+  animation-delay: 0.35s;
+}
+.animate span:nth-of-type(9) {
+  animation-delay: 0.4s;
+}
+.animate span:nth-of-type(10) {
+  animation-delay: 0.45s;
+}
+.animate span:nth-of-type(11) {
+  animation-delay: 0.5s;
+}
+.animate span:nth-of-type(12) {
+  animation-delay: 0.55s;
+}
+.animate span:nth-of-type(13) {
+  animation-delay: 0.6s;
+}
+.animate span:nth-of-type(14) {
+  animation-delay: 0.65s;
+}
+.animate span:nth-of-type(15) {
+  animation-delay: 0.7s;
+}
+.animate span:nth-of-type(16) {
+  animation-delay: 0.75s;
+}
+.animate span:nth-of-type(17) {
+  animation-delay: 0.8s;
+}
+.animate span:nth-of-type(18) {
+  animation-delay: 0.85s;
+}
+.animate span:nth-of-type(19) {
+  animation-delay: 0.9s;
+}
+.animate span:nth-of-type(20) {
+  animation-delay: 0.95s;
+}
+.animate span:nth-of-type(21) {
+  animation-delay: 0.9s;
+}
+.animate span:nth-of-type(22) {
+  animation-delay: 0.95s;
+}
+.animate span:nth-of-type(23) {
+  animation-delay: 0.9s;
+}
+.animate span:nth-of-type(24) {
+  animation-delay: 0.95s;
+}
+.animate span:nth-of-type(25) {
+  animation-delay: 0.9s;
+}
+.animate span:nth-of-type(26) {
+  animation-delay: 0.95s;
+}
+.animate span:nth-of-type(27) {
+  animation-delay: 0.9s;
+}
+.animate span:nth-of-type(28) {
+  animation-delay: 0.95s;
+}
+
+.title span {
+  font-size: 150%;
+  color: #b10e81;
+  opacity: 0;
+  transform: translate(-300px, 0) scale(0);
+  animation: sideSlide 0.5s forwards;
+}
+
+@keyframes sideSlide {
+  60% {
+    transform: translate(20px, 0) scale(1);
+    color: #b10e81;
+  }
+
+  80% {
+    transform: translate(20px, 0) scale(1);
+    color: red;
+  }
+
+  99% {
+    transform: translate(0) scale(1.2);
+    color: #00f0ff;
+  }
+
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+    color: #b10e81;
+  }
+}
+
+
+.subtitle {
+  font-size: 150%;
+  color: black;
+  /*font-family: "Sacramento", cursive;*/
+  font-family: Calibri, sans-serif;
+  font-style: italic;
+  opacity: 0;
+  transform: translate(-300px, 0) scale(0);
+  animation: sideSlide2 0.5s forwards;
+}
+
+@keyframes sideSlide2 {
+  60% {
+    transform: translate(20px, 0) scale(1);
+    color: orange;
+  }
+
+  80% {
+    transform: translate(20px, 0) scale(1);
+    color: red;
+  }
+
+  99% {
+    transform: translate(0) scale(1.2);
+    color: #00f0ff;
+  }
+
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+    color: black;
+  }
+}
