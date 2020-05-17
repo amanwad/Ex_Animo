@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 body {
   padding: 10px;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  font-family: 'Nunito', sans-serif;
   background-image: url("blue.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   z-index: 2;
   height: 110vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 #docid{
@@ -18,14 +21,14 @@ body {
 /*Content stuff*/
 .within{
   z-index: 5;
-  background: #ffffff;
+  background:  rgb(230,230,230);
   position: absolute;
   margin-left: 12%;
   margin-right: 16px;
   padding-left: 5%;
   padding-right: 10%;
   padding-top: 10px;
-  height: 70vh;
+  min-height: 70vh;
   min-width: 70%;
 }
 
@@ -54,7 +57,7 @@ body {
   width: 12%;
   max-width: 300px;
   position: absolute;
-  height: 70vh;
+  min-height: 70vh;
   /* overflow: auto; */
 }
 .sidebar button {
@@ -84,7 +87,8 @@ body {
 .topnav {
   overflow: hidden;
   border: 1px solid #ccc;
-  background-color: white;
+  /* background-color: white; */
+  background:  rgb(230,230,230);
 }
 .topnav button {
   background-color: inherit;
@@ -121,12 +125,12 @@ img.bg {
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: 0.6;
   z-index: -5;
 }
 
 .layer {
-  background-color: black;
+  background-color: grey;
 }
 
 .dates {
@@ -137,6 +141,40 @@ img.bg {
   left: 20%;
   margin-top: -50px;
   margin-left: -100px; */
+}
+
+.displayInfo{
+  font-weight: 1000;
+}
+
+.displayDate{
+  font-weight: 1000;
+  font-size: 3vh;
+  margin-bottom: 10%;
+}
+
+.file{
+  color:black;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+a:link, a:visited {
+  background-color:#4CAF50;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 20%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+}
+
+a:hover, a:active {
+  background-color: rgb(167, 236, 170);
+  color: grey;
 }
 
 
@@ -274,7 +312,8 @@ img.bg {
   100% {
     transform: translate(0) scale(1);
     opacity: 1;
-    color: #e2052a;
+    /* color: #ff153c; */
+    color: #1c8846;
   }
 }
 

@@ -11,11 +11,11 @@
   <div class="logo">
     <div class="animate title">
       <span>E</span><span>x</span> <span>A</span><span>n</span><span>i</span
-      ><span>m</span><span>u</span><span>s</span>
+      ><span>m</span><span>o</span>
       <br />
     </div>
     <div class="subtitle">
-      <span>Brings</span> <span>the</span> <span>best</span> <span>care</span> <span>to</span>
+      <span>Brings</span> <span>the</span> <span>best</span> <span>care</span> <span>right</span> <span>to</span>
       <span>you</span>
     </div>
   </div>
@@ -55,6 +55,8 @@
           {{> welcomeScreen}}
         {{/if}}
       </div>
+      {{else}}
+      <h1>Please Sign In or Create an Account to Continue</h1>
     {{/if}}
   </body>
 
@@ -83,21 +85,34 @@
 
 <template name="patientScreen">
   <div class="within">
+    <div>
+      <div class="info">
+          <strong class="displayInfo">Name: </strong>{{retSess.name}}
+          <br />
+          <strong class="displayInfo">Gender: </strong>{{retSess.gender}}
+          <br />
+          <strong class="displayInfo">Blood Type: </strong>{{retSess.blood}}
+          <br />
+          <strong class="displayInfo">Date of Birth: </strong>{{retSess.dob}}
+          <br />
+          <strong class="displayInfo"> Notes:</strong>
+          <p>{{retSess.pre}}</p>
+      </div>
+      <hr>
+    </div>
     <div class="dates">
-      <ul>
           {{#each date in returnDates}}
-            <strong>{{date}}</strong>
+            <strong class="displayDate">{{date}}</strong>
+            <br />
              <div class="files">
               {{returnFiles date}}
               {{#each file in retFile date}}
-                <li>
                   {{returnURL date file}}
-                  <a href="{{retURL date file}}">{{file.name}}</a>
-                </li>
+                  <a class="file" target="_blank" href="{{retURL date file}}">{{file.name}}</a>
               {{/each}}
+              <br />
             </div> 
-          {{/each}}
-        </ul> <!---End of return Dates-->
+          {{/each}} <!---End of return Dates-->
   </div>
   </div>
 </template>

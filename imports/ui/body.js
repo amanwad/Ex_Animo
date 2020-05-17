@@ -66,7 +66,7 @@ Template.body.events({
 
 Template.side.helpers({
   patients() {
-    return Patients.find({});
+    return Patients.find({doctor: Meteor.userId()});
   },
   returnSession(patient) {
     if(Session.get("SelectedPatient") == patient) {
@@ -77,6 +77,12 @@ Template.side.helpers({
 });
 
 Template.patientScreen.helpers({
+  retSess() {
+    console.log(Session.get("SelectedPatient"));
+    var x = Session.get("SelectedPatient");
+    //console.log("Patients: " + Patients.find({name: x}).fetch()[0]);
+    return Patients.find({name: x}).fetch()[0];
+  },
   returnDates() {
     //console.log(Session.get("Dates"));
     return Session.get("Dates");
