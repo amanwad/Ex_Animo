@@ -38,7 +38,7 @@ Meteor.methods({
     addPatients(name,gender,dob,blood,pre){
       Patients.insert({name:name,doctor:this.userId,gender:gender,dob:dob,blood:blood,pre:pre}); //add all info for patient
     },
-    async generateSignedUrl({ bucketName, fileName }) {
+    async generateSignedUrl( bucketName, fileName ) {
       const options = {
         version: 'v4',
         action: 'read',
@@ -53,6 +53,10 @@ Meteor.methods({
     async listFiles(bucketName) {
       // Lists files in the bucket
       const [files] = await storage.bucket(bucketName).getFiles();
+      // var names = []
+      // files.forEach(file => {
+      //   names.push(file.name)
+      // });
       return files;
     },
     async testing(currPatient){

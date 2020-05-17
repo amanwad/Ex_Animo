@@ -3,6 +3,11 @@
 <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
 </head>
 <body>
+  <li class="nav-item">
+    {{> loginButtons}}
+</li>
+  <img class="bg layer" />
+  <img src="/images/blue.jpg" class="bg"/>
   <div class="logo">
     <div class="animate title">
       <span>E</span><span>x</span> <span>A</span><span>n</span><span>i</span
@@ -18,13 +23,10 @@
     <div class="container">
       <!--<a href="#" class="brand-logo">Online Physical Examination</a>-->
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="nav-item">
-              {{> loginButtons}}
-          </li>
         </ul>
     </div>
-    {{retId}}
   </nav>
+  <h5 id="docid">Doctor ID: {{retId}}</h5>
   {{#if retIfLoggedIn}} <!---If the user has not logged in yet, display the login screen-->
   <div class="container">
     </div>
@@ -46,10 +48,15 @@
         {{else}}
           {{> form}}
         {{/if}}
+        {{#if retIfPatient}}
+          {{> patientScreen}}
+        {{/if}}
+        {{#if retIfWelcome "Welcome"}}
+          {{> welcomeScreen}}
+        {{/if}}
       </div>
     {{/if}}
   </body>
-
 
 <template name="side">
     <div class="sidebar">
@@ -60,29 +67,37 @@
       {{/if}}
       {{#each patients}}
         {{#if returnSession this.name}}
-          <button class = "active" type="button" id="{{name}}">{{name}}</button>
-          <div class="dates">
-              <button class="dropbtn">Dates</button>
-              {{#if retDrop}}
-              <div class="dropdown-content">
-                {{#each returnDates}}
-                  
-                  <button id="{{this}}" class="datebtn">{{this}}</button>
-                  {{#if myDate this}} <!-- if my session == this date-->
-                  <h1> THIS IS BEING DISPLAYED</h1>
-                  <div class="files">
-                    {{#each returnFiles}}
-                      <a href="https://www.w3schools.com">{{this}}</a>
-                    {{/each}}
-                  </div> 
-                  {{/if}}
-                {{/each}} <!---End of return Dates-->
-              </div>
-              {{/if}}
-        </div>
+        <button class = "active" type="button" id="{{name}}">{{name}}</button>
         {{else}}
           <button class = "inactive" type="button" id="{{name}}">{{name}}</button>
         {{/if}}
       {{/each}}
     </div>
+</template>
+
+<template name="welcomeScreen">
+    <div class="within">
+      <h1>Welcome! To get started, click on a patient's name on the sidebar.</h1>
+    </div>
+</template>
+
+<template name="patientScreen">
+  <div class="within">
+    <div class="dates">
+      <ul>
+          {{#each date in returnDates}}
+            <strong>{{date}}</strong>
+             <div class="files">
+              {{returnFiles date}}
+              {{#each file in retFile date}}
+                <li>
+                  {{returnURL date file}}
+                  <a href="{{retURL date file}}">{{file.name}}</a>
+                </li>
+              {{/each}}
+            </div> 
+          {{/each}}
+        </ul> <!---End of return Dates-->
+  </div>
+  </div>
 </template>

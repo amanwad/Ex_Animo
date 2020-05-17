@@ -1,0 +1,22 @@
+<template name="form">
+  <div class = "addPatient">
+  <form class="new-patient">
+    <br />
+    <input class="iF" type="text" name="name" placeholder="Enter Patient Name" />
+    <br />
+    <select class="iF" id="gender" name="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+    <br />
+    <input class="iF" type="text" name="blood" placeholder="Enter Patient Blood Type" />
+    <br />
+    <input class="iF" type="date" id="birth" name="birth">
+    <br />
+    <textarea class="iF" name="message" placeholder="Preexisting conditions and other info" rows="10" cols="30"> </textarea>
+    <br />
+    <input class="iF" type="submit" value="Submit">
+  </form>
+</div>
+</template>

@@ -1,0 +1,16 @@
+<template name="side">
+    <div class="sidebar">
+      {{#if returnSession "Welcome"}}
+        <button class = "active" type="button" id="Welcome">Welcome</button>
+      {{else}}
+        <button class = "inactive" type="button" id="Welcome">Welcome</button>
+      {{/if}}
+      {{#each patients}}
+        {{#if returnSession this.name}}
+        <button class = "active" type="button" id="{{name}}">{{name}}</button>
+        {{else}}
+          <button class = "inactive" type="button" id="{{name}}">{{name}}</button>
+        {{/if}}
+      {{/each}}
+    </div>
+</template>
