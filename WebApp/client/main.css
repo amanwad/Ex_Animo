@@ -12,6 +12,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+#logo{
+  width: 120px;
+  height: 93px;
+}
+
 #docid{
   position: fixed;
   top: 5px;
